@@ -21,8 +21,7 @@ namespace ScratchPad
             return result;
         }
         static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges)
-        {
-            // Complete this function
+        {            
             int appleCount = 0;
             int orangeCount = 0;
             for (int i = 0; i < apples.Length; i++)
