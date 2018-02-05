@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Remoting.Messaging;
 
 namespace ScratchPad
 {
@@ -10,55 +9,8 @@ namespace ScratchPad
 
     public class Program
     {
-        static int[] solve(int[] grades)
-        {
-            // Complete this function
-            int[] result = new int[grades.Length];
-            for (int i = 0; i < grades.Length; i++)
-            {
-                result[i] = ((grades[i] < 38) || ((grades[i] % 5) < 3)) ? grades[i] : ((grades[i] / 5) + 1) * 5;
-            }
-            return result;
-        }
-        static void countApplesAndOranges(int s, int t, int a, int b, int[] apples, int[] oranges)
-        {            
-            int appleCount = 0;
-            int orangeCount = 0;
-            for (int i = 0; i < apples.Length; i++)
-            {
-                var pointOfImpact = a + apples[i];
-                if (pointOfImpact >= s && pointOfImpact <= t)
-                {
-                    appleCount++;
-                }
-            }
-            Console.WriteLine(appleCount);
-            for (int i = 0; i < oranges.Length; i++)
-            {
-                var pointOfImpact = b + oranges[i];
-                if (pointOfImpact >= s && pointOfImpact <= t)
-                {
-                    orangeCount++;
-                }
-            }
-            Console.WriteLine(orangeCount);
-        }
-
-        static string kangaroo(int x1, int v1, int x2, int v2)
-        {
-            // Complete this function
-            if (x1 < x2 && v1 < v2) return "NO";
-            if (x1 > x2 && v1 > v2) return "NO";
-            if (x1 == x2 && v1 != v2) return "NO";
-            if (x1 != x2 && v1 == v2) return "NO";
-
-            return (x1 - x2) % (v2 - v1) == 0 ? "YES" : "NO";
-        }
-
         static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles)
         {
-            // Complete this function
-                
             var maxAttackRange = ((n - 1) * 2) + (getMin(Math.Abs(r_q - 1), Math.Abs(c_q - 1)) 
                                + getMin(Math.Abs(r_q - 1), Math.Abs(c_q - n))
                                + getMin(Math.Abs(r_q - n), Math.Abs(c_q - 1))
@@ -233,52 +185,6 @@ namespace ScratchPad
 
         public static void Main(string[] args)  
         {
-            //MyObject myObj = null;
-            //MyObject myObj1 = new MyObject()
-            //{
-            //    Prop1 = null
-            //};
-            //string val = myObj?.Prop1;
-            //string val2 = myObj1?.Prop1;
-            //string val1 = "val1";
-            //string abc = myObj?.Prop1 ?? myObj1?.Prop1 ?? val1 ?? "abc";      
-
-
-            //int n = Convert.ToInt32(Console.ReadLine());
-            //int[] grades = new int[n];
-            //for (int grades_i = 0; grades_i < n; grades_i++)
-            //{
-            //    grades[grades_i] = Convert.ToInt32(Console.ReadLine());
-            //}
-            //int[] result = solve(grades);
-            //Console.WriteLine(String.Join("\n", result));
-
-
-            //string[] tokens_s = Console.ReadLine().Split(' ');
-            //int s = Convert.ToInt32(tokens_s[0]);
-            //int t = Convert.ToInt32(tokens_s[1]);
-            //string[] tokens_a = Console.ReadLine().Split(' ');
-            //int a = Convert.ToInt32(tokens_a[0]);
-            //int b = Convert.ToInt32(tokens_a[1]);
-            //string[] tokens_m = Console.ReadLine().Split(' ');
-            //int m = Convert.ToInt32(tokens_m[0]);
-            //int n = Convert.ToInt32(tokens_m[1]);
-            //string[] apple_temp = Console.ReadLine().Split(' ');
-            //int[] apple = Array.ConvertAll(apple_temp, Int32.Parse);
-            //string[] orange_temp = Console.ReadLine().Split(' ');
-            //int[] orange = Array.ConvertAll(orange_temp, Int32.Parse);
-            //countApplesAndOranges(s, t, a, b, apple, orange);
-
-
-            //string[] tokens_x1 = Console.ReadLine().Split(' ');
-            //int x1 = Convert.ToInt32(tokens_x1[0]);
-            //int v1 = Convert.ToInt32(tokens_x1[1]);
-            //int x2 = Convert.ToInt32(tokens_x1[2]);
-            //int v2 = Convert.ToInt32(tokens_x1[3]);
-            //string result = kangaroo(x1, v1, x2, v2);
-            //Console.WriteLine(result);
-
-
             string[] tokens_n = Console.ReadLine().Split(' ');
             int n = Convert.ToInt32(tokens_n[0]);
             int k = Convert.ToInt32(tokens_n[1]);
