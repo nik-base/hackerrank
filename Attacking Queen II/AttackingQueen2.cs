@@ -1,12 +1,7 @@
 ﻿using System;
 
-namespace ScratchPad
+namespace AttackingQueen2
 {
-    public class MyObject
-    {
-        public string Prop1 { get; set; }
-    }
-
     public class Program
     {
         static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles)
